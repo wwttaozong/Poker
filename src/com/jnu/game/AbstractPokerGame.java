@@ -1,6 +1,6 @@
 package com.jnu.game;
 
-import com.jnu.player.Player;
+import com.jnu.player.PokerPlayer;
 import com.jnu.poker.Poker;
 import com.jnu.poker.enums.ColorEnum;
 import com.jnu.poker.enums.ValueEnum;
@@ -11,7 +11,7 @@ import java.util.Collections;
 /**
  * Created by wwt on 2016/9/14.
  */
-public abstract class BaseGame {
+public abstract class AbstractPokerGame implements Game{
 
     /**
      * 玩家数量，默认是4
@@ -31,7 +31,7 @@ public abstract class BaseGame {
     /**
      * 玩家的集合
      */
-    protected ArrayList<Player> players;
+    protected ArrayList<PokerPlayer> players;
 
     /**
      * 是否算上大小王，默认为false
@@ -41,7 +41,7 @@ public abstract class BaseGame {
     /**
      * 单线程环境无须同步，多线程应该考虑初始化的原子性
      */
-    public BaseGame(){
+    public AbstractPokerGame(){
         init();
     }
 
@@ -66,7 +66,7 @@ public abstract class BaseGame {
         if(playersNum <= 0 || players == null || players.isEmpty()){
             return ;
         }
-        for(Player player:players){
+        for(PokerPlayer player:players){
             if(player.getPokers() == null || player.getPokers().isEmpty()){
                return ;
             }
@@ -93,9 +93,9 @@ public abstract class BaseGame {
         Collections.shuffle(pokers);
 
         //初始化玩家
-        players=new ArrayList<Player>();
+        players=new ArrayList<PokerPlayer>();
         for(int i=0;i<playersNum;i++){
-            players.add(new Player());
+            players.add(new PokerPlayer());
         }
     }
 
@@ -131,11 +131,11 @@ public abstract class BaseGame {
         this.pokers = pokers;
     }
 
-    public ArrayList<Player> getPlayers() {
+    public ArrayList<PokerPlayer> getPlayers() {
         return players;
     }
 
-    public void setPlayers(ArrayList<Player> players) {
+    public void setPlayers(ArrayList<PokerPlayer> players) {
         this.players = players;
     }
 }

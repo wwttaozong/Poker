@@ -1,8 +1,8 @@
 package com.jnu;
 
-import com.jnu.game.BaseGame;
-import com.jnu.game.GameFactory;
-import com.jnu.game.enums.GameModeEnum;
+import com.jnu.game.AbstractPokerGame;
+import com.jnu.game.PokerGameFactory;
+import com.jnu.game.enums.PokerGameModeEnum;
 
 /**
  * Created by wwt on 2016/9/14.
@@ -14,7 +14,7 @@ public class StartGame {
         //程序启动参数解析，实际应用中此处应该优化UI、交互等
         checkAndParseArgs(args);
         
-        BaseGame game=GameFactory.initGameByMode(GameModeEnum.DISPATCH_GAME);
+        AbstractPokerGame game= PokerGameFactory.initGameByMode(PokerGameModeEnum.DISPATCH_GAME);
         if(game != null) {
             game.play();
         }

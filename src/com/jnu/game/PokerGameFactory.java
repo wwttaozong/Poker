@@ -1,15 +1,15 @@
 package com.jnu.game;
 
-import com.jnu.game.enums.GameModeEnum;
+import com.jnu.game.enums.PokerGameModeEnum;
 
 /**
  * 游戏模式工厂，这里暂且用简单工厂
  * Created by wwt on 2016/9/14.
  */
-public class GameFactory {
+public class PokerGameFactory {
 
-    public static BaseGame initGameByMode(GameModeEnum mode){
-        BaseGame game=null;
+    public static AbstractPokerGame initGameByMode(PokerGameModeEnum mode){
+        AbstractPokerGame game=null;
         switch(mode){
             case DISPATCH_GAME:
                 game=new DispatchGame();

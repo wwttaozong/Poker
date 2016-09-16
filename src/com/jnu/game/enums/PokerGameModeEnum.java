@@ -3,7 +3,7 @@ package com.jnu.game.enums;
 /**
  * Created by wwt on 2016/9/14.
  */
-public enum GameModeEnum {
+public enum PokerGameModeEnum {
 
     DISPATCH_GAME(1,"发牌游戏");
 
@@ -14,7 +14,7 @@ public enum GameModeEnum {
 
     private String desc;
 
-    private GameModeEnum(int mode,String desc){
+    private PokerGameModeEnum(int mode, String desc){
         this.mode=mode;
         this.desc=desc;
     }

@@ -7,12 +7,7 @@ import java.util.ArrayList;
 /**
  * Created by wwt on 2016/9/14.
  */
-public class Player {
-
-    /**
-     * 玩家id
-     */
-    private int id;
+public class PokerPlayer extends BasePlayer{
 
     /**
      * 玩家手中扑克牌的数量
@@ -24,7 +19,7 @@ public class Player {
      */
     private ArrayList<Poker> pokers;
 
-    public Player(){
+    public PokerPlayer(){
 
     }
 
@@ -41,7 +36,7 @@ public class Player {
         pokers.add(poker);
     }
 
-    public Player(ArrayList<Poker> pokers){
+    public PokerPlayer(ArrayList<Poker> pokers){
         this.pokers=pokers;
     }
 
@@ -51,14 +46,6 @@ public class Player {
 
     public void setPokers(ArrayList<Poker> pokers) {
         this.pokers = pokers;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public int getPokersNum() {
